@@ -21,6 +21,7 @@ public class Sandbox
     {
         await Initialize();
         await RunQueries();
+        await RunCommands();
     }
 
     private async Task Initialize()
@@ -43,5 +44,15 @@ public class Sandbox
         var blogs = await _db.Blogs.ToListAsync();
         foreach (var blog in blogs)
             _logger.LogInformation(blog.ToString());
+
+        // NOTE: Further DB queries go here
+    }
+
+    private Task RunCommands()
+    {
+        return Task.CompletedTask;
+
+        // NOTE: Further DB commands go here
+
     }
 }
