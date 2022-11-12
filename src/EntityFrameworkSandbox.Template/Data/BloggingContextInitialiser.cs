@@ -1,8 +1,8 @@
-﻿using EntityFramework.Sandbox.Data.Entities;
+﻿using EntityFrameworkSandbox.Template.Data.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 
-namespace EntityFramework.Sandbox.Data;
+namespace EntityFrameworkSandbox.Template.Data;
 
 public class BloggingContextInitialiser
 {

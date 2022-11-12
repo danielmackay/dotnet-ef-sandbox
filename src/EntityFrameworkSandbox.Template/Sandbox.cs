@@ -1,8 +1,8 @@
-﻿using EntityFramework.Sandbox.Data;
+﻿using EntityFrameworkSandbox.Template.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 
-namespace EntityFramework.Sandbox;
+namespace EntityFrameworkSandbox.Template;
 
 public class Sandbox
 {
