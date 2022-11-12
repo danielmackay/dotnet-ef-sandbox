@@ -1,4 +1,4 @@
-﻿namespace DotNet.Ef7.Features;
+﻿namespace DotNet.Ef7.Sandbox.Data;
 
 public class Blog
 {

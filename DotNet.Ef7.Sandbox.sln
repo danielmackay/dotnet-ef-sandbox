@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33103.184
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotNet.Ef7.Features", "DotNet.Ef7.Features.csproj", "{1AB2E45D-65BC-41D7-9EB8-F91CFC10F841}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotNet.Ef7.Sandbox", "DotNet.Ef7.Sandbox.csproj", "{77EDA9B0-269E-4963-9F8C-99AEB728A5FD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,10 +11,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{1AB2E45D-65BC-41D7-9EB8-F91CFC10F841}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1AB2E45D-65BC-41D7-9EB8-F91CFC10F841}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1AB2E45D-65BC-41D7-9EB8-F91CFC10F841}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1AB2E45D-65BC-41D7-9EB8-F91CFC10F841}.Release|Any CPU.Build.0 = Release|Any CPU
+		{77EDA9B0-269E-4963-9F8C-99AEB728A5FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{77EDA9B0-269E-4963-9F8C-99AEB728A5FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{77EDA9B0-269E-4963-9F8C-99AEB728A5FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{77EDA9B0-269E-4963-9F8C-99AEB728A5FD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
