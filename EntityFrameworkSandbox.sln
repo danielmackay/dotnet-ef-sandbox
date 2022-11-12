@@ -6,13 +6,13 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{77B3A175-6F1E-4829-BBAB-AFB1707A3D77}"
 	ProjectSection(SolutionItems) = preProject
 		.github\workflows\dotnet.yml = .github\workflows\dotnet.yml
-		EntityFramework.Sandbox.nuspec = EntityFramework.Sandbox.nuspec
 		.github\workflows\package.yml = .github\workflows\package.yml
+		EntityFrameworkSandbox.Template.nuspec = EntityFrameworkSandbox.Template.nuspec
 		README.md = README.md
 		.template.config\template.json = .template.config\template.json
 	EndProjectSection
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EntityFramework.Sandbox", "src\EntityFramework.Sandbox\EntityFramework.Sandbox.csproj", "{147C36C2-7D33-47E7-9B4C-33C819ED51C1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EntityFrameworkSandbox.Template", "src\EntityFramework.Sandbox\EntityFrameworkSandbox.Template.csproj", "{147C36C2-7D33-47E7-9B4C-33C819ED51C1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

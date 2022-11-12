@@ -4,7 +4,7 @@ on:
     branches:
       - main
     paths:
-      - 'EntityFramework.Sandbox.nuspec'
+      - 'EntityFrameworkSandbox.Template.nuspec'
   workflow_dispatch:
     
 jobs:
@@ -19,7 +19,7 @@ jobs:
           nuget-version: '6.x'
 
       - name: Create the package
-        run: nuget pack EntityFramework.Sandbox.nuspec -NoDefaultExcludes
+        run: nuget pack EntityFrameworkSandbox.Template.nuspec -NoDefaultExcludes
         
       - name: Publish the package
         run: nuget push *.nupkg -Source 'https://api.nuget.org/v3/index.json' -ApiKey ${{secrets.NUGET_API_KEY}} -SkipDuplicate
