@@ -17,6 +17,7 @@
       "language": "C#",
       "type": "project"
     },
+    "sourceName": "EntityFramework.Sandbox",
     "preferNameDirectory": true,
     "sources": [
       {
@@ -31,8 +32,8 @@
           ".vscode/**/*",
           "**/*.filelist",
           "**/*.user",
-          "**/*.lock.json",
           "**/.git/**",
+          ".github/**/*",
           "*.nuspec"
         ]
       }
