@@ -18,6 +18,34 @@ This can be useful in the following scenario:
 
 ## Setup
 
+### Template Installation
+
+Install the dotnet CLI template via:
+
+```ps1
+dotnet new --install EntityFrameworkSandbox.Template 
+```
+
+### Project Creation
+
+You can use the template to create a new project via:
+
+```ps1
+mkdir my-ef-sandbox
+cd my-ef-sandbox
+dotnet new ef-sandbox
+```
+
+Alternatively, you can create the project directly into a new sub-folder via:
+
+```ps1
+dotnet new ef-sandbox --name my-sub-folder
+```
+
+## Usage
+
+### Writing Commands & Queries
+
 - Ensure the connection matches if you are using something other than local DB
 - Update the `Sandbox` to run your own EF queries and commands
 
@@ -35,7 +63,7 @@ private Task RunCommands()
 }
 ```
 
-## Run
+### Run the Project
 
 - Press F5
   - Console up will start
