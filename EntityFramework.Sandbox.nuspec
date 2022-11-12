@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+
+    <id>EntityFramework.Sandbox.Template</id>
+    <version>0.0.1</version>
+    <title>EntityFramework Sandbox Template</title>
+    <authors>Daniel Mackay</authors>
+    <description>Entity Framework Sandbox</description>
+    <summary>
+      This is a project template that sets up Entity Framework 7 with a real DB and real data.
+    </summary>
+    <releaseNotes>
+    </releaseNotes>
+
+    <projectUrl>https://github.com/danielmackay/dotnet-ef-sandbox</projectUrl>
+    <repository type="git" url="https://github.com/danielmackay/dotnet-ef-sandbox.git" branch="main" />
+
+    <license type="expression">MIT</license>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <tags>ef entityframework efcore ef7 project template csharp dotnet</tags>
+    <readme>README.md</readme>
+
+    <packageTypes>
+      <packageType name="Template" />
+    </packageTypes>
+
+  </metadata>
+
+  <files>
+    <file src="README.md" />
+    <file src=".\**" target="content" exclude="**\bin\**;**\obj\**;**\.vs\**;**\.vscode\**;**\.git\**;**\.github\**;**\LICENSE;" />
+  </files>
+
+</package>
