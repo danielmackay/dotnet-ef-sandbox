@@ -1,34 +1,25 @@
 ﻿// See https://aka.ms/new-console-template for more information
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.EntityFrameworkCore;
+using DotNet.Ef7.Sandbox;
 using DotNet.Ef7.Sandbox.Data;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
 
 var builder = Host.CreateDefaultBuilder(args);
 builder.ConfigureServices(services =>
 {
     services.AddDbContext<BloggingContext>();
-    services.AddTransient<BloggingContextInitialiser>();
+    services.AddSingleton<BloggingContextInitialiser>();
+    services.AddSingleton<Sandbox>();
 });
 
 var app = builder.Build();
-
 app.Start();
 
 using (var scope = app.Services.CreateScope())
 {
-    var db = app.Services.GetRequiredService<BloggingContextInitialiser>();
-    await db.InitialiseAsync();
-    await db.SeedAsync();
-
-    Console.WriteLine("Created DB");
+    var sandbox = app.Services.GetRequiredService<Sandbox>();
+    await sandbox.Run();
 
     Console.WriteLine("Done!");
     Console.ReadKey();
-}
-
-public class Sandbox
-{
-
 }

@@ -1,3 +1,4 @@
+using DotNet.Ef7.Sandbox.Data.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 
@@ -9,8 +10,6 @@ public class BloggingContext : DbContext
 
     public DbSet<Blog> Blogs { get; set; }
     public DbSet<Post> Posts { get; set; }
-
-    public string DbPath { get; }
 
     public BloggingContext(IConfiguration configuration)
     {
