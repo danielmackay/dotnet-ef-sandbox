@@ -1,6 +1,6 @@
 ﻿using System.Text;
 
-namespace EntityFramework.Sandbox.Data.Entities;
+namespace EntityFrameworkSandbox.Template.Data.Entities;
 
 public class Blog
 {
