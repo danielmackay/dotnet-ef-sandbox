@@ -1,6 +1,6 @@
-# dotnet-ef7-sandbox
+# Entity Framework Sandbox
 
-The .NET EF Sandbox is a CLI project template that allows you to quickly spin up a functioning project running on the latest Entity Framework with a real database and real data.
+The Entity Framework Sandbox is a CLI project template that allows you to quickly spin up a functioning project running on the latest version of EF with a real database and real data.
 
 This can be useful in the following scenario:
 

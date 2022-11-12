@@ -1,8 +1,8 @@
-﻿using DotNet.Ef7.Sandbox.Data;
+﻿using EntityFramework.Sandbox.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 
-namespace DotNet.Ef7.Sandbox;
+namespace EntityFramework.Sandbox;
 
 public class Sandbox
 {

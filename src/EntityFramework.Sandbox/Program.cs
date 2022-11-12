@@ -1,6 +1,6 @@
 ﻿// See https://aka.ms/new-console-template for more information
-using DotNet.Ef7.Sandbox;
-using DotNet.Ef7.Sandbox.Data;
+using EntityFramework.Sandbox;
+using EntityFramework.Sandbox.Data;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 

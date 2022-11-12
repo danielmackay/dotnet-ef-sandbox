@@ -1,6 +1,6 @@
 ﻿using System.Text;
 
-namespace DotNet.Ef7.Sandbox.Data.Entities;
+namespace EntityFramework.Sandbox.Data.Entities;
 
 public class Post
 {
