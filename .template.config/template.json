@@ -17,7 +17,7 @@
       "language": "C#",
       "type": "project"
     },
-    "sourceName": "EntityFramework.Sandbox",
+    "sourceName": "EntityFrameworkSandbox",
     "preferNameDirectory": true,
     "sources": [
       {
