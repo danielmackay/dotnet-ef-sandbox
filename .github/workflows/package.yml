@@ -5,6 +5,8 @@ on:
       - main
     paths:
       - 'EntityFramework.Sandbox.nuspec'
+  workflow_dispatch:
+    
 jobs:
   publish:
     name: Publish to NuGet.org
