@@ -1,0 +1,41 @@
+{
+    "$schema": "http://json.schemastore.org/template",
+    "author": "DanielMackay",
+    "classifications": [
+      "EF",
+      "EntityFramework",
+      "EfCore",
+      "Ef7",
+      "Sandbox"
+    ],
+    "name": "Entity Framework Sandbox",
+    "description":  "",
+    "identity": "EntityFramework.Sandbox",
+    "groupIdentity": "EntityFramework.Sandbox",
+    "shortName": "ef-sandbox",
+    "tags": {
+      "language": "C#",
+      "type": "project"
+    },
+    "sourceName": "EntityFramework.Sandbox",
+    "preferNameDirectory": true,
+    "sources": [
+      {
+        "source": "./",
+        "target": "./",
+        "exclude": [
+          "README.md",
+          "**/[Bb]in/**",
+          "**/[Oo]bj/**",
+          ".template.config/**/*",
+          ".vs/**/*",
+          ".vscode/**/*",
+          "**/*.filelist",
+          "**/*.user",
+          "**/.git/**",
+          ".github/**/*",
+          "*.nuspec"
+        ]
+      }
+    ]
+  }

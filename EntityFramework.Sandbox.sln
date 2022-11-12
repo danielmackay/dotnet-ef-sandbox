@@ -5,6 +5,7 @@ VisualStudioVersion = 17.4.33103.184
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{77B3A175-6F1E-4829-BBAB-AFB1707A3D77}"
 	ProjectSection(SolutionItems) = preProject
+		EntityFramework.Sandbox.nuspec = EntityFramework.Sandbox.nuspec
 		README.md = README.md
 	EndProjectSection
 EndProject
