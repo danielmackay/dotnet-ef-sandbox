@@ -3,6 +3,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.EntityFrameworkCore;
+using DotNet.Ef7.Sandbox.Data;
 
 var builder = Host.CreateDefaultBuilder(args);
 builder.ConfigureServices(services =>
@@ -22,7 +23,6 @@ using (var scope = app.Services.CreateScope())
     await db.SeedAsync();
 
     Console.WriteLine("Created DB");
-    db.Database.EnsureCreated();
 
     Console.WriteLine("Done!");
     Console.ReadKey();
