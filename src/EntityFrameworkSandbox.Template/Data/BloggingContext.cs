@@ -30,4 +30,10 @@ public class BloggingContext : DbContext
         options.EnableSensitiveDataLogging();
         options.LogTo(msg => _logger.LogDebug(msg));
     }
+
+    protected override void OnModelCreating(ModelBuilder builder)
+    {
+        builder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
+        base.OnModelCreating(builder);
+    }
 }
