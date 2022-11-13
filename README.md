@@ -63,6 +63,20 @@ private Task RunCommands()
 }
 ```
 
+### Overriding Model Configuarion
+
+This can be done in the configuration classes:
+
+```csharp
+internal class PostConfiguration : IEntityTypeConfiguration<Post>
+{
+    public void Configure(EntityTypeBuilder<Post> builder)
+    {
+        // NOTE: Custom model configuration goes here
+    }
+}
+```
+
 ### Run the Project
 
 - Press F5
