@@ -77,6 +77,16 @@ internal class PostConfiguration : IEntityTypeConfiguration<Post>
 }
 ```
 
+### Schema Changes
+
+The project is designed to use migrations for schema upgrades.  However, if you prefer to instead drop and create the DB everytime you can set `Application.EnableMigrations` to `false` in `appsettings.json`:
+
+```json
+"Application": {
+    "EnableMigrations": false
+}
+```
+
 ### Run the Project
 
 - Press F5

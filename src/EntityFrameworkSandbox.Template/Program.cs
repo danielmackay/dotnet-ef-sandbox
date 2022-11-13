@@ -20,6 +20,6 @@ using (var scope = app.Services.CreateScope())
     var sandbox = app.Services.GetRequiredService<Sandbox>();
     await sandbox.Run();
 
-    Console.WriteLine("Done!");
+    Console.WriteLine("Done!"); 
     Console.ReadKey();
 }
