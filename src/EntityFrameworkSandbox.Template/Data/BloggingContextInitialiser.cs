@@ -1,5 +1,6 @@
 ﻿using EntityFrameworkSandbox.Template.Data.Entities;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 
 namespace EntityFrameworkSandbox.Template.Data;
@@ -8,11 +9,13 @@ public class BloggingContextInitialiser
 {
     private readonly ILogger<BloggingContextInitialiser> _logger;
     private readonly BloggingContext _db;
+    private readonly IConfiguration _configuration;
 
-    public BloggingContextInitialiser(ILogger<BloggingContextInitialiser> logger, BloggingContext context)
+    public BloggingContextInitialiser(ILogger<BloggingContextInitialiser> logger, BloggingContext context, IConfiguration configuration)
     {
         _logger = logger;
         _db = context;
+        _configuration = configuration;
     }
 
     public async Task InitialiseAsync()
@@ -21,10 +24,18 @@ public class BloggingContextInitialiser
         {
             if (_db.Database.IsSqlServer())
             {
-                await _db.Database.MigrateAsync();
+                var isMigrationsEnabled = _configuration.GetValue<bool>("Application:EnableMigrations");
 
-                //await _db.Database.EnsureDeletedAsync();
-                //await _db.Database.EnsureCreatedAsync();
+                if (isMigrationsEnabled)
+                {
+                    await _db.Database.MigrateAsync();
+                }
+                else
+                {
+                    await _db.Database.EnsureDeletedAsync();
+                    await _db.Database.EnsureCreatedAsync();
+                }
+
             }
         }
         catch (Exception ex)
