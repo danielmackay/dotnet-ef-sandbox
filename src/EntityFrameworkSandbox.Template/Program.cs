@@ -8,8 +8,8 @@ var builder = Host.CreateDefaultBuilder(args);
 builder.ConfigureServices(services =>
 {
     services.AddDbContext<BloggingContext>();
-    services.AddSingleton<BloggingContextInitialiser>();
-    services.AddSingleton<Sandbox>();
+    services.AddTransient<BloggingContextInitialiser>();
+    services.AddTransient<Sandbox>();
 });
 
 var app = builder.Build();

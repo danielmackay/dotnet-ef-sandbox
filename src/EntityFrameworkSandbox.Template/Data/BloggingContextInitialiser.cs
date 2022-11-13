@@ -21,8 +21,10 @@ public class BloggingContextInitialiser
         {
             if (_db.Database.IsSqlServer())
             {
-                await _db.Database.EnsureDeletedAsync();
-                await _db.Database.EnsureCreatedAsync();
+                await _db.Database.MigrateAsync();
+
+                //await _db.Database.EnsureDeletedAsync();
+                //await _db.Database.EnsureCreatedAsync();
             }
         }
         catch (Exception ex)
