@@ -95,3 +95,7 @@ The project is designed to use migrations for schema upgrades.  However, if you 
   - Data will be seeded
   - SQL queries will run
   - All SQL and results output to console
+  
+### Updated Nuget Version
+
+A new package will be pushed to Nuget anytime `EntityFrameworkSandbox.Template.nuspec` is changed on `main` branch.  Normally this will happen via a package verison change.
