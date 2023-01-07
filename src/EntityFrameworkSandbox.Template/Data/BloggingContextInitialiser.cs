@@ -18,7 +18,16 @@ public class BloggingContextInitialiser
         _configuration = configuration;
     }
 
-    public async Task InitialiseAsync()
+    public async Task Run()
+    {
+        _logger.LogInformation("Initializing DB");
+        await InitialiseAsync();
+
+        _logger.LogInformation("Seeding DB");
+        await SeedAsync();
+    }
+
+    private async Task InitialiseAsync()
     {
         try
         {
@@ -45,7 +54,7 @@ public class BloggingContextInitialiser
         }
     }
 
-    public async Task SeedAsync()
+    private async Task SeedAsync()
     {
         try
         {
@@ -58,7 +67,7 @@ public class BloggingContextInitialiser
         }
     }
 
-    public async Task TrySeedAsync()
+    private async Task TrySeedAsync()
     {
         // Default data
         // Seed, if necessary
