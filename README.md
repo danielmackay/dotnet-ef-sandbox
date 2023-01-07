@@ -105,6 +105,14 @@ internal class PostConfiguration : IEntityTypeConfiguration<Post>
 }
 ```
 
+### Overriding the Connection String
+
+Leave `appsettings.json` as is and add a secret via the CLI.  This ensures your connection does not get checked into source control
+
+```ps1
+dotnet user-secrets set "ConnectionStrings:Default" "{Your Connection String}"
+```
+
 ### Schema Changes
 
 The project is designed to use migrations for schema upgrades.  However, if you prefer to instead drop and create the DB every time you can set `Application.EnableMigrations` to `false` in `appsettings.json`:
