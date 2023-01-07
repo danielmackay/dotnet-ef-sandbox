@@ -1,6 +1,8 @@
-﻿using EntityFrameworkSandbox.Template.Data;
+﻿using EntityFrameworkSandbox.Template.Cli.Common;
+using EntityFrameworkSandbox.Template.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
+using Spectre.Console;
 using Spectre.Console.Cli;
 
 namespace EntityFrameworkSandbox.Template.Cli.Commands;
@@ -23,7 +25,7 @@ public class GetBlogsCommand : AsyncCommand
         var blogs = await _db.Blogs.ToListAsync();
 
         foreach (var blog in blogs)
-            _logger.LogInformation(blog.ToString());
+            AnsiConsole.Console.WriteJson(blog);
 
         return 0;
     }

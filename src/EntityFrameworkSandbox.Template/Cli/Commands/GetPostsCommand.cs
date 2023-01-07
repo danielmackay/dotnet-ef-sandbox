@@ -1,4 +1,6 @@
-﻿using EntityFrameworkSandbox.Template.Data;
+﻿using EntityFrameworkSandbox.Template.Cli.Common;
+using EntityFrameworkSandbox.Template.Data;
+using EntityFrameworkSandbox.Template.Data.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using Spectre.Console;
@@ -24,7 +26,10 @@ public class GetPostsCommand : AsyncCommand
         var posts = await _db.Posts.ToListAsync();
         
         foreach (var post in posts)
-            _logger.LogInformation(post.ToString());
+            AnsiConsole.Console.WriteJson(post);
+
+        //AnsiConsole.WriteLine("Done!");
+        //_logger.LogInformation("Done!");
 
         return 0;
     }
