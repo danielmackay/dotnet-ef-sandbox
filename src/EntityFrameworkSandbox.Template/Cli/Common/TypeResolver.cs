@@ -1,7 +1,7 @@
 ﻿using Microsoft.Extensions.Hosting;
 using Spectre.Console.Cli;
 
-namespace EntityFrameworkSandbox.Template.Cli;
+namespace EntityFrameworkSandbox.Template.Cli.Common;
 
 public sealed class TypeResolver : ITypeResolver, IDisposable
 {

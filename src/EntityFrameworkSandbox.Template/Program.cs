@@ -1,5 +1,5 @@
-﻿using EntityFrameworkSandbox.Template;
-using EntityFrameworkSandbox.Template.Cli;
+﻿using EntityFrameworkSandbox.Template.Cli.Commands;
+using EntityFrameworkSandbox.Template.Cli.Common;
 using EntityFrameworkSandbox.Template.Data;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -7,7 +7,6 @@ using Spectre.Console;
 using Spectre.Console.Cli;
 
 AnsiConsole.Write(new FigletText("EF Sandbox").Color(Color.Purple));
-// TODO DM: Dynamically pull version
 AnsiConsole.WriteLine("Entity Framework Sandbox Command-line Tools 0.0.1");
 AnsiConsole.WriteLine();
 
@@ -18,33 +17,20 @@ builder.ConfigureServices(services =>
 {
     services.AddDbContext<BloggingContext>();
     services.AddTransient<BloggingContextInitialiser>();
-    services.AddTransient<Sandbox>();
 });
 
-var host = builder.Build();
-using (var scope = host.Services.CreateScope())
-{
-    var initialiser = host.Services.GetRequiredService<BloggingContextInitialiser>();
-    await initialiser.Run();
-    AnsiConsole.WriteLine("DB Initialized");
-}
-
 var registrar = new TypeRegistrar(builder);
-
 var app = new CommandApp(registrar);
 
 app.Configure(config =>
 {
     config.PropagateExceptions();
 
-    //// Register available commands
-    //config.AddCommand<WeatherForecastCommand>("forecasts")
-    //    .WithDescription("Display local weather forecasts.")
-    //    .WithExample(new[] { "forecasts", "5" });
+    // Register available commands
+    config.AddCommand<InitCommand>("init");
+    config.AddCommand<GetPostsCommand>("get-posts");
+    config.AddCommand<GetBlogsCommand>("get-blogs");
 });
-
-// TODO: Migrate to command
-
 
 try
 {
