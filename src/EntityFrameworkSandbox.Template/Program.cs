@@ -5,9 +5,10 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Spectre.Console;
 using Spectre.Console.Cli;
+using System.Reflection;
 
 AnsiConsole.Write(new FigletText("EF Sandbox").Color(Color.Purple));
-AnsiConsole.WriteLine("Entity Framework Sandbox Command-line Tools 0.0.1");
+AnsiConsole.WriteLine($"Entity Framework Sandbox Command-line Tools {Assembly.GetExecutingAssembly().GetName().Version}");
 AnsiConsole.WriteLine();
 
 var builder = Host.CreateDefaultBuilder(args);
