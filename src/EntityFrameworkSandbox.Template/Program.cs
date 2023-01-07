@@ -25,14 +25,8 @@ var host = builder.Build();
 using (var scope = host.Services.CreateScope())
 {
     var initialiser = host.Services.GetRequiredService<BloggingContextInitialiser>();
-
-    AnsiConsole.WriteLine("Initializing DB");
-    await initialiser.InitialiseAsync();
-
-    AnsiConsole.WriteLine("Seeding DB");
-    await initialiser.SeedAsync();
-
-    AnsiConsole.WriteLine("Done!");
+    await initialiser.Run();
+    AnsiConsole.WriteLine("DB Initialized");
 }
 
 var registrar = new TypeRegistrar(builder);
