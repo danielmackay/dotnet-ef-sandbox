@@ -15,7 +15,7 @@ var builder = Host.CreateDefaultBuilder(args);
 // Add services to the container
 builder.ConfigureServices(services =>
 {
-    services.AddDbContext<BloggingContext>();
+    services.AddDbContext<BloggingContext>(contextLifetime: ServiceLifetime.Transient, optionsLifetime: ServiceLifetime.Transient);
     services.AddTransient<BloggingContextInitialiser>();
 });
 

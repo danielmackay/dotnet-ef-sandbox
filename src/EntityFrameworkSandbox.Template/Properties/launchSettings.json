@@ -1,0 +1,11 @@
+{
+  "profiles": {
+    "EntityFrameworkSandbox.Template": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "DOTNET_ENVIRONMENT": "Development"
+        //"DOTNET_ENVIRONMENT": "Production"
+      }
+    }
+  }
+}
