@@ -20,7 +20,7 @@ public class GetBlogsCommand : AsyncCommand
 
     public override async Task<int> ExecuteAsync(CommandContext context)
     {
-        _logger.LogInformation("Getting Blogs...");
+        AnsiConsole.WriteLine("Getting Blogs");
 
         var blogs = await _db.Blogs.ToListAsync();
 

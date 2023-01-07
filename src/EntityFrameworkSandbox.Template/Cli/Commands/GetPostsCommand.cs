@@ -21,15 +21,12 @@ public class GetPostsCommand : AsyncCommand
 
     public override async Task<int> ExecuteAsync(CommandContext context)
     {
-        _logger.LogInformation("Getting Posts...");
+        AnsiConsole.WriteLine("Getting Posts");
 
         var posts = await _db.Posts.ToListAsync();
         
         foreach (var post in posts)
             AnsiConsole.Console.WriteJson(post);
-
-        //AnsiConsole.WriteLine("Done!");
-        //_logger.LogInformation("Done!");
 
         return 0;
     }
