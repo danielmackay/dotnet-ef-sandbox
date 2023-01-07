@@ -33,37 +33,65 @@ You can use the template to create a new project via:
 ```ps1
 mkdir my-ef-sandbox
 cd my-ef-sandbox
-dotnet new ef-sandbox
+dotnet new ef-sandbox --name EF.Sandbox --output .\
 ```
 
 Alternatively, you can create the project directly into a new sub-folder via:
 
 ```ps1
-dotnet new ef-sandbox --name my-sub-folder
+dotnet new ef-sandbox --name EF.Sandbox
 ```
 
 ## Usage
 
+### Initializing the Database
+
+```ps1
+dotnet run init
+```
+
+### Running Commands
+
+```ps1
+dotnet run get-posts
+dotnet run get-blogs
+```
+
+## Customization
+
 ### Writing Commands & Queries
 
-- Ensure the connection matches if you are using something other than local DB
-- Update the `Sandbox` to run your own EF queries and commands
+New commands can be added to `/Cli/Commands/`.  
+
+For example:
 
 ```csharp
-private async Task RunQueries()
+public class GetBlogsCommand : AsyncCommand
 {
-    // NOTE: Further DB queries go here
+    private readonly BloggingContext _db;
+    private readonly ILogger<GetBlogsCommand> _logger;
+
+    public GetBlogsCommand(BloggingContext context, ILogger<GetBlogsCommand> logger)
+    {
+        _db = context;
+        _logger = logger;
+    }
+
+    public override async Task<int> ExecuteAsync(CommandContext context)
+    {
+        _logger.LogInformation("Getting Blogs...");
+
+        var blogs = await _db.Blogs.ToListAsync();
+
+        foreach (var blog in blogs)
+            _logger.LogInformation(blog.ToString());
+
+        return 0;
+    }
 }
 ```
 
-```csharp
-private Task RunCommands()
-{
-    // NOTE: Further DB commands go here
-}
-```
-
-### Overriding Model Configuarion
+### Overriding Model Configuration
 
 This can be done in the configuration classes:
 
@@ -79,7 +107,7 @@ internal class PostConfiguration : IEntityTypeConfiguration<Post>
 
 ### Schema Changes
 
-The project is designed to use migrations for schema upgrades.  However, if you prefer to instead drop and create the DB everytime you can set `Application.EnableMigrations` to `false` in `appsettings.json`:
+The project is designed to use migrations for schema upgrades.  However, if you prefer to instead drop and create the DB every time you can set `Application.EnableMigrations` to `false` in `appsettings.json`:
 
 ```json
 "Application": {
@@ -87,15 +115,12 @@ The project is designed to use migrations for schema upgrades.  However, if you 
 }
 ```
 
-### Run the Project
+## Troubleshooting
 
-- Press F5
-  - Console up will start
-  - By default, DB will be dropped & re-created
-  - Data will be seeded
-  - SQL queries will run
-  - All SQL and results output to console
+- Ensure the connection matches if you are using something other than local DB
+
+## Deployment
   
 ### Updated Nuget Version
 
-A new package will be pushed to Nuget anytime `EntityFrameworkSandbox.Template.nuspec` is changed on `main` branch.  Normally this will happen via a package verison change.
+A new package will be pushed to Nuget anytime `EntityFrameworkSandbox.Template.nuspec` is changed on `main` branch.  Normally this will happen via a package version change.
