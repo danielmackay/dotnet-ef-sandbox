@@ -1,5 +1,6 @@
 ﻿using EntityFrameworkSandbox.Template.Data;
 using Microsoft.Extensions.Logging;
+using Spectre.Console;
 using Spectre.Console.Cli;
 
 namespace EntityFrameworkSandbox.Template.Cli.Commands;
@@ -17,8 +18,8 @@ public class InitCommand : AsyncCommand
 
     public override async Task<int> ExecuteAsync(CommandContext context)
     {
+        AnsiConsole.WriteLine("Initializing DB");
         await _initialiser.Run();
-        _logger.LogInformation("DB Initialized");
 
         return 0;
     }

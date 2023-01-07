@@ -1,7 +1,9 @@
 using EntityFrameworkSandbox.Template.Data.Entities;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Diagnostics;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
+using Spectre.Console;
 using System.Reflection;
 
 namespace EntityFrameworkSandbox.Template.Data;
@@ -28,7 +30,7 @@ public class BloggingContext : DbContext
         options.UseSqlServer(_configuration.GetConnectionString("Default"));
         options.EnableDetailedErrors();
         options.EnableSensitiveDataLogging();
-        options.LogTo(msg => _logger.LogDebug(msg));
+        options.LogTo(msg => AnsiConsole.MarkupLineInterpolated($"[yellow]{msg}[/]"), new[] { RelationalEventId.CommandExecuted });
     }
 
     protected override void OnModelCreating(ModelBuilder builder)
