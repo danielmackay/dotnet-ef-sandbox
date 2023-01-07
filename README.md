@@ -132,3 +132,8 @@ The project is designed to use migrations for schema upgrades.  However, if you 
 ### Updated Nuget Version
 
 A new package will be pushed to Nuget anytime `EntityFrameworkSandbox.Template.nuspec` is changed on `main` branch.  Normally this will happen via a package version change.
+
+Version needs to be updated in:
+
+-  `EntityFrameworkSandbox.Template.nuspec`
+-  `EntityFrameworkSandbox.Template.csproj`
