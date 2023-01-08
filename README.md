@@ -57,6 +57,18 @@ dotnet run get-posts
 dotnet run get-blogs
 ```
 
+### Showing Help
+
+Run the following from your bin directory:
+
+```ps1
+.\{Your.Project}.exe --help
+```
+
+For example:
+
+![image](https://user-images.githubusercontent.com/2636640/211180120-6514df0e-0ac6-49d3-94e5-10addd12929b.png)
+
 ## Customization
 
 ### Writing Commands & Queries
