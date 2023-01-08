@@ -6,7 +6,6 @@
     <RootNamespace>EntityFrameworkSandbox.Template</RootNamespace>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>annotations</Nullable>
-    <UserSecretsId>9a60009b-b173-4932-83ed-50943643c72c</UserSecretsId>
     <AssemblyVersion>1.0.0</AssemblyVersion>
     <FileVersion>1.0.0</FileVersion>
   </PropertyGroup>
