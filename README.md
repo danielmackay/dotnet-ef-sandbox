@@ -1,5 +1,11 @@
 # Entity Framework Sandbox
 
+[![Build](https://github.com/danielmackay/dotnet-ef-sandbox/actions/workflows/dotnet.yml/badge.svg)](https://github.com/danielmackay/dotnet-ef-sandbox/actions/workflows/dotnet.yml)
+[![Nuget](https://img.shields.io/nuget/v/EntityFrameworkSandbox.Template?label=NuGet)](https://www.nuget.org/packages/EntityFrameworkSandbox.Template)
+[![Nuget](https://img.shields.io/nuget/dt/EntityFrameworkSandbox.Template?label=Downloads)](https://www.nuget.org/packages/EntityFrameworkSandbox.Template)
+
+<!-- [![CodeQL](https://github.com/jasontaylordev/CleanArchitecture/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/jasontaylordev/CleanArchitecture/actions/workflows/codeql-analysis.yml) -->
+
 The Entity Framework Sandbox is a CLI project template that allows you to quickly spin up a functioning project running on the latest version of EF with a real database and real data.
 
 This can be useful in the following scenario:
