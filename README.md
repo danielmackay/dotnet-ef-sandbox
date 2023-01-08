@@ -110,6 +110,7 @@ internal class PostConfiguration : IEntityTypeConfiguration<Post>
 Leave `appsettings.json` as is and add a secret via the CLI.  This ensures your connection does not get checked into source control
 
 ```ps1
+dotnet user-secrets init
 dotnet user-secrets set "ConnectionStrings:Default" "{Your Connection String}"
 ```
 
