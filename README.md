@@ -1,6 +1,7 @@
 # Entity Framework Sandbox
 
 [![Build](https://github.com/danielmackay/dotnet-ef-sandbox/actions/workflows/dotnet.yml/badge.svg)](https://github.com/danielmackay/dotnet-ef-sandbox/actions/workflows/dotnet.yml)
+[![CodeQL](https://github.com/danielmackay/dotnet-ef-sandbox/actions/workflows/codeql.yml/badge.svg)](https://github.com/danielmackay/dotnet-ef-sandbox/actions/workflows/codeql.yml)
 [![Nuget](https://img.shields.io/nuget/v/EntityFrameworkSandbox.Template?label=NuGet)](https://www.nuget.org/packages/EntityFrameworkSandbox.Template)
 [![Nuget](https://img.shields.io/nuget/dt/EntityFrameworkSandbox.Template?label=Downloads)](https://www.nuget.org/packages/EntityFrameworkSandbox.Template)
 
