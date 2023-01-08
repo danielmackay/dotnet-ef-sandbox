@@ -28,9 +28,14 @@ app.Configure(config =>
     config.PropagateExceptions();
 
     // Register available commands
-    config.AddCommand<InitCommand>("init");
-    config.AddCommand<GetPostsCommand>("get-posts");
-    config.AddCommand<GetBlogsCommand>("get-blogs");
+    config.AddCommand<InitCommand>("init")
+          .WithDescription("Creates DB and seeds data");
+
+    config.AddCommand<GetPostsCommand>("get-posts")
+          .WithDescription("Queries the DB for posts");
+
+    config.AddCommand<GetBlogsCommand>("get-blogs")
+          .WithDescription("Queries the DB for blogs");
 });
 
 try
