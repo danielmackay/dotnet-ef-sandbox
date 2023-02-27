@@ -8,9 +8,11 @@
     <Nullable>annotations</Nullable>
     <AssemblyVersion>1.0.0</AssemblyVersion>
     <FileVersion>1.0.1</FileVersion>
+    <UserSecretsId>db8756b4-2178-4915-b4b4-5fdd2cda7440</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Bogus" Version="34.0.2" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="7.0.0">
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>

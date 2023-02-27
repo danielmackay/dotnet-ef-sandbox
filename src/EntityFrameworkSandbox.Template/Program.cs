@@ -18,6 +18,7 @@ builder.ConfigureServices(services =>
 {
     services.AddDbContext<BloggingContext>(contextLifetime: ServiceLifetime.Transient, optionsLifetime: ServiceLifetime.Transient);
     services.AddTransient<BloggingContextInitialiser>();
+    services.AddOptions<DataConfig>().BindConfiguration(DataConfig.Section);
 });
 
 var registrar = new TypeRegistrar(builder);

@@ -1,6 +1,5 @@
 ﻿using EntityFrameworkSandbox.Template.Cli.Common;
 using EntityFrameworkSandbox.Template.Data;
-using EntityFrameworkSandbox.Template.Data.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using Spectre.Console;
@@ -23,8 +22,19 @@ public class GetPostsCommand : AsyncCommand
     {
         AnsiConsole.WriteLine("Getting Posts");
 
-        var posts = await _db.Posts.ToListAsync();
-        
+        var posts = await _db.Posts.Select(p => new
+        {
+            p.PostId,
+            p.BlogId,
+            p.Title,
+            p.Content,
+            Tags = p.Tags.Select(t => new
+            {
+                t.TagId,
+                t.Name
+            })
+        }).ToListAsync();
+
         foreach (var post in posts)
             AnsiConsole.Console.WriteJson(post);
 
