@@ -22,7 +22,11 @@ public class GetBlogsCommand : AsyncCommand
     {
         AnsiConsole.WriteLine("Getting Blogs");
 
-        var blogs = await _db.Blogs.ToListAsync();
+        var blogs = await _db.Blogs.Select(b => new
+        {
+            b.BlogId,
+            b.Url,
+        }).ToListAsync();
 
         foreach (var blog in blogs)
             AnsiConsole.Console.WriteJson(blog);
