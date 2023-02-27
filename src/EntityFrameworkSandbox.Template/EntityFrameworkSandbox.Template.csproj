@@ -6,9 +6,8 @@
     <RootNamespace>EntityFrameworkSandbox.Template</RootNamespace>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>annotations</Nullable>
-    <AssemblyVersion>1.0.0</AssemblyVersion>
-    <FileVersion>1.0.1</FileVersion>
-    <UserSecretsId>db8756b4-2178-4915-b4b4-5fdd2cda7440</UserSecretsId>
+    <AssemblyVersion>1.1.0</AssemblyVersion>
+    <FileVersion>1.1.0</FileVersion>
   </PropertyGroup>
 
   <ItemGroup>
